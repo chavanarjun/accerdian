@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Accredian Enterprise Clone 🚀
 
-## Getting Started
+A highly responsive, production-ready partial clone of the [Accredian Enterprise](https://enterprise.accredian.com/) landing page. Built as a technical assignment.
 
-First, run the development server:
+![Hero Section Preview](./screenshot.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 Approach & Architecture
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The goal was to build a clean, structural, and semantic UI that perfectly captures the enterprise feel of the original website without blindly copying code. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I adopted a **Component-Driven Architecture** using Next.js App Router:
+1. **Global Styles**: Leveraged Tailwind CSS augmented with custom CSS variables for design tokens (gradients, brand colors) in `globals.css`.
+2. **Modularity**: Split the massive landing page into 11+ distinct, single-responsibility components (`Hero`, `Stats`, `CATFramework`, etc.).
+3. **Interactivity**: Added smooth scrolling, viewport-triggered animations (using `IntersectionObserver` in the `Stats` component), and a CSS-based infinite marquee for the `Clients` component.
+4. **Lead Capture (⭐ Bonus)**: Built a fully functional `EnquireModal` that POSTs data to a Next.js API Route (`/api/enquire/route.ts`). For this demo, submissions append to a local JSON file to simulate database storage without external dependencies.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤖 AI Usage Explanation
 
-## Learn More
+**Antigravity (Google Deepmind AI Agent)** was used extensively throughout the development lifecycle:
+*   **Planning & Discovery**: The AI used browser agents to navigate the original website, capture screenshots, and document the structure/content of every section seamlessly.
+*   **Boilerplate & Scaffolding**: Generated the initial Next.js + Tailwind environment.
+*   **Component Generation**: The AI drafted the core structure and Tailwind classes for all 11+ UI components rapidly.
+*   **Manual Intervention & Improvements**: While the AI drafted the components, the exact visual hierarchy, animation speeds, brand gradients, layout spacing (padding/margins), and the API route's edge-case validation were reviewed and guided iteratively to ensure premium aesthetics as per requirement.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ How to Run Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisites
+- Node.js 18.x or later
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd accerdian
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📈 Future Improvements (With More Time)
+
+If given more than 48 hours, I would improve the following:
+1. **CMS Integration**: Connect the content (programs, domains, FAQs) to Sanity.io or Contentful so the marketing team can edit content without touching code.
+2. **Database & CRM**: Swap the local JSON file API approach with a real database (PostgreSQL via Prisma) and pipe successful enquiries directly into Salesforce or HubSpot.
+3. **Real Assets**: Swap the text-fallback firm logos and emojis with high-resolution vector SVGs.
+4. **A/B Testing Structure**: Implement framework hooks for Optimizely or VWO testing on the Hero CTA and Form fields.
+5. **i18n Support**: Add multi-language routing for global enterprise reach.
