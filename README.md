@@ -15,12 +15,7 @@ I adopted a **Component-Driven Architecture** using Next.js App Router:
 4. **Lead Capture (⭐ Bonus)**: Built a fully functional `EnquireModal` that POSTs data to a Next.js API Route (`/api/enquire/route.ts`). For this demo, submissions append to a local JSON file to simulate database storage without external dependencies.
 
 ## 🤖 AI Usage Explanation
-
-**Antigravity (Google Deepmind AI Agent)** was used extensively throughout the development lifecycle:
-*   **Planning & Discovery**: The AI used browser agents to navigate the original website, capture screenshots, and document the structure/content of every section seamlessly.
-*   **Boilerplate & Scaffolding**: Generated the initial Next.js + Tailwind environment.
-*   **Component Generation**: The AI drafted the core structure and Tailwind classes for all 11+ UI components rapidly.
-*   **Manual Intervention & Improvements**: While the AI drafted the components, the exact visual hierarchy, animation speeds, brand gradients, layout spacing (padding/margins), and the API route's edge-case validation were reviewed and guided iteratively to ensure premium aesthetics as per requirement.
+The AI tool that i used during development was claude i use it for code generation of the ui components and used it in css i also used ai to make the apis and make the readme file
 
 ## 🛠️ How to Run Locally
 
